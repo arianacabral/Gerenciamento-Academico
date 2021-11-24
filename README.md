@@ -1,4 +1,10 @@
-# Gerenciamento Acadêmico Web
+# Gerenciamento Acadêmico 
+
+Aplicação Web para Gerenciamento Acadêmico
+> Versão **1.0** 
+
+| [<img src="src/Demo_Cadastrar_Aluno.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno.gif)<br />| [<img src="src/Demo_Cadastrar_Aluno.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno.gif)<br /> | [<img src="src/Demo_Atualizar_Foto_Alunos.gif" width="330px;"/><br /><sub>ATUALIZAR DADOS DO ALUNO</sub>](src/Demo_Atualizar_Foto_Alunos.gif)<br /> |
+| :---: | :---: | :---: |
 
 ---
 ### Funcionalidades implementadas 📖
