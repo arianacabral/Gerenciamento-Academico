@@ -3,7 +3,7 @@
 Aplicação Web para Gerenciamento Acadêmico
 > Versão **1.0** 
 
-| [<img src="src/Demo_Cadastrar_Aluno.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno.gif)<br />| [<img src="src/Demo_Cadastrar_Aluno.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno.gif)<br /> | [<img src="src/Demo_Atualizar_Foto_Alunos.gif" width="330px;"/><br /><sub>ATUALIZAR DADOS DO ALUNO</sub>](src/Demo_Atualizar_Foto_Alunos.gif)<br /> |
+| [<img src="src/Demo_Cadastrar_Aluno.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno.gif)<br /> | [<img src="src/Demo_Atualizar_Foto_Alunos.gif" width="330px;"/><br /><sub>ATUALIZAR DADOS DO ALUNO</sub>](src/Demo_Atualizar_Foto_Alunos.gif)<br /> |[<img src="src/Demo_Cadastrar_Curso.gif" width="330px;"/><br /><sub>CADASTRAR DISCIPLINA</sub>](src/Demo_Cadastrar_Curso.gif)<br />|
 | :---: | :---: | :---: |
 
 ---
@@ -16,7 +16,7 @@ Aplicação Web para Gerenciamento Acadêmico
 + Cadastro de cursos
 + Atualização dos dados dos cursos
 + Exclusão de cursos
-+ Visualização dos dados dos cursos 
++ Visualização dos dados dos cursos (com paginação)
 + Cadastro de disciplinas 
 + Atualização dos dados das disciplinas
 + Exclusão de disciplinas
