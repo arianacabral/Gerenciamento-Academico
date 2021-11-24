@@ -78,9 +78,6 @@ Aplicação Web para Gerenciamento Acadêmico
 
 **Framework**
 
-<div style="display: inline_block">
-  <img align="center" alt="Bootstrap" height="40" width="40" src="https://github.com/devicons/devicon/blob/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/bootstrap/bootstrap-plain.svg">
-</div>
 
 </br>
 
