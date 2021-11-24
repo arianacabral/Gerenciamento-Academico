@@ -85,3 +85,12 @@ Aplicação Web para Gerenciamento Acadêmico
 </br>
 
 **Dependências**
+
++ Dapper (2.0.123)
++ EntityFramework (6.4.4)
++ Microsoft.AspNetCore.Http (2.2.2)
++ Microsoft.EntityFrameworkCore (3.1.0)
++ Microsoft.VisualStudio.Web.CodeGeneration.Design (3.1.5)
++ MySql.Data (8.0.27)
++ System.IO (4.3.0)
++ System.Web.Mvc.Extensions (1.1.0)
