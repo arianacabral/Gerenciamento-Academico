@@ -80,6 +80,7 @@ Aplicação Web para Gerenciamento Acadêmico
 
 <div style="display: inline_block">
   <a href="https://getbootstrap.com/"><img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" height="50" width="60" /></a>
+   <a href="https://jquery.com/"><img src="https://avatars.githubusercontent.com/u/70142?s=200&v=4" alt="JQuery" height="50" width="50" /></a>
 </div>
 
 </br>
