@@ -78,6 +78,9 @@ Aplicação Web para Gerenciamento Acadêmico
 
 **Framework**
 
+<div style="display: inline_block">
+  <a href="https://getbootstrap.com/"><img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" height="50" width="60" /></a>
+</div>
 
 </br>
 
