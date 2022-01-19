@@ -1,0 +1,57 @@
+﻿@model IEnumerable<waGerenciamentoAcademico.Models.Curso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.curso)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Ver Detalhes", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+@if (ViewBag.TotalPags > 1)
+{
+    <div class="row">
+        <div class="col-lg-1">
+            <p>Página</p>
+        </div>
+        <div class="col-lg-1">
+            @using (Html.BeginForm("List", "Cursos"))
+            {
+                @Html.DropDownList("pagina", (SelectList)ViewBag.Paginas, new { onchange = "this.form.submit();", @class = "form-control" })
+            }
+        </div>
+    </div>
+}

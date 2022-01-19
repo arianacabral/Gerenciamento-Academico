@@ -1,0 +1,74 @@
+﻿@model waGerenciamentoAcademico.Models.DisciplinaCurso
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar</h1>
+<br />
+<h4>Disciplina por Curso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="curso" class="control-label"></label>
+                @Html.DropDownListFor(e => e.id_curso,  new SelectList(Model.listaCursos, "id", "curso"), "Selecione o curso", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label asp-for="disciplina" class="control-label"></label>
+                @Html.DropDownListFor(e => e.id_disciplina, new SelectList(Enumerable.Empty<SelectListItem>(), "id_disciplina", "disciplina"), "Selecione a disciplina", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="data_desativacao" class="control-label"></label>
+                <input asp-for="data_desativacao" class="form-control" />
+                <span asp-validation-for="data_desativacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#id_curso').change(function () {
+            var idCurso = $('#id_curso').val();
+            if (idCurso > 0) {
+                $('#id_curso').prop('disabled', true);
+                $.post('@Url.Action("ObterDisciplinas", "DisciplinasPorCursos")',
+                    {'idCurso': idCurso }, function (data) {
+                        if (data.length > 0) {
+                            $('#id_disciplina').empty();
+                            var unique = data.filter(function(itm, i, data) {
+                                return i == data.indexOf(itm);
+                            });
+
+                            for (var i = 0; i < unique.length; i++) {
+                                $('#id_disciplina').append('<option value =' + unique[i].id + '>' + unique[i].disciplina + '</option>');
+                            }
+                        }
+
+                        $('#id_curso').prop('disabled', false);
+                    });
+            }
+        });
+
+    });
+</script>

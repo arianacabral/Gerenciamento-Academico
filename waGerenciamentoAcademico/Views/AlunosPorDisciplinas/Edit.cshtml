@@ -1,0 +1,141 @@
+﻿@model waGerenciamentoAcademico.Models.AlunoDisciplina
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+<br />
+<h4>Aluno por Disciplina</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="curso" class="control-label"></label>
+                @Html.DropDownListFor(e => e.id_curso,  new SelectList(Model.listaMatriculas, "id_curso", "curso"), "Selecione o curso", new { @class = "form-control select2 select1" })
+            </div>
+
+            <div class="form-group">
+                <label asp-for="disciplina" class="control-label"></label>
+                @Html.DropDownListFor(e => e.id_disciplina, new SelectList(Enumerable.Empty<SelectListItem>(), "id_disciplina", "disciplina"), "Selecione a disciplina", new { @class = "form-control select2 select1" })
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="nome" class="control-label"></label>
+                @Html.DropDownListFor(e => e.id_aluno, new SelectList(Enumerable.Empty<SelectListItem>(), "id_aluno", "nome"), "Selecione o aluno", new { @class = "form-control select2 select1" })
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ano" class="control-label"></label>
+                @Html.DropDownListFor(e => e.ano, new SelectList(Enumerable.Empty<SelectListItem>(), "ano", "ano"), "Selecione o ano", new { @class = "form-control select2 select1" })
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="semestre" class="control-label"></label>
+                @Html.DropDownListFor(e => e.semestre, new SelectList(Enumerable.Empty<SelectListItem>(), "semestre", "semestre"), "Selecione o semestre", new { @class = "form-control select2 select1" })
+            </div>
+            <div class="form-group">
+                <label asp-for="nota" class="control-label"></label>
+                <input asp-for="nota" class="form-control" />
+                <span asp-validation-for="nota" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="status" /> @Html.DisplayNameFor(model => model.status)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+       $('#id_curso').change(function () {
+            var idCurso = $('#id_curso').val();
+            if (idCurso > 0) {
+                $('#id_curso').prop('disabled', true);
+                $.post('@Url.Action("ObterAlunos", "AlunosPorDisciplinas")',
+                    {'idCurso': idCurso }, function (data) {
+
+                        if (data.length > 0) {
+                            $('#id_aluno').empty();
+
+                             var unique = data.filter(function(itm, i, data) {
+                                return i == data.indexOf(itm);
+                            });
+
+                            for (var i = 0; i < unique.length; i++) {
+                                $('#id_aluno').append('<option value =' + unique[i].id + '>' + unique[i].nome + '</option>');
+                            }
+                        }
+
+                        $('#id_curso').prop('disabled', false);
+                    });
+            }
+        });
+
+       $('#id_aluno').change(function () {
+            var idAluno = $('#id_aluno').val();
+            if (idAluno > 0) {
+                $.post('@Url.Action("ObterAnos", "AlunosPorDisciplinas")',
+                    {'idAluno': idAluno }, function (data) {
+                        if (data.length > 0) {
+                            $('#ano').empty();
+                             var unique = data.filter(function(itm, i, data) {
+                                return i == data.indexOf(itm);
+                            });
+
+                            for (var i = 0; i < unique.length; i++) {
+                               $('#ano').append('<option value =' + unique[i].ano + '>' + unique[i].ano + '</option>');
+                                $('#semestre').append('<option value =' + unique[i].semestre + '>' + unique[i].semestre + '</option>');
+                            }
+                        }
+                    });
+            }
+        });
+
+        $('#id_curso').change(function () {
+            var idCurso = $('#id_curso').val();
+            if (idCurso > 0) {
+                $('#id_curso').prop('disabled', true);
+                $.post('@Url.Action("ObterDisciplinas", "AlunosPorDisciplinas")',
+                    {'idCurso': idCurso }, function (data) {
+                        if (data.length > 0) {
+                            $('#id_disciplina').empty();
+
+                            var unique = data.filter(function(itm, i, data) {
+                                return i == data.indexOf(itm);
+                            });
+
+                            for (var i = 0; i < unique.length; i++) {
+                                $('#id_disciplina').append('<option value =' + unique[i].id + '>' + unique[i].disciplina + '</option>');
+                            }
+                        }
+
+                        $('#id_curso').prop('disabled', false);
+                    });
+            }
+        });
+
+    });
+</script>

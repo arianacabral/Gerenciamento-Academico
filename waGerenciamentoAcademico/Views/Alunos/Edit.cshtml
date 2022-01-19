@@ -1,0 +1,74 @@
+﻿@model waGerenciamentoAcademico.Models.Aluno
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+<br />
+<h4>Aluno</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nome" class="control-label"></label>
+                <input asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imagem" class="control-label"></label>
+                <div class="form-group">
+                    <img src="/Imagens/IAlunos/@Model.nomeArquivo" class="rounded-circle" width="100" height="100" />
+                </div>
+                <div class="panel-collapse collapse in">
+                    <label asp-for="caminhoArquivo" class="control-label"></label>
+                    <input asp-for="caminhoArquivo" class="panel-collapse collapse in" readonly />
+                    <span asp-validation-for="caminhoArquivo" class="text-danger"></span>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <label asp-for="nomeArquivo" class="control-label"></label>
+                    <input asp-for="nomeArquivo" class="form-control" readonly />
+                    <span asp-validation-for="nomeArquivo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="imagem" class="form-control" />
+                    <span asp-validation-for="imagem" class="text-danger"></span>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <label asp-for="caminhoArquivoComprovante" class="control-label"></label>
+                    <input asp-for="caminhoArquivoComprovante" class="panel-collapse collapse in" readonly />
+                    <span asp-validation-for="caminhoArquivoComprovante" class="text-danger"></span>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <label asp-for="nomeArquivoComprovante" class="control-label"></label>
+                    <input asp-for="nomeArquivoComprovante" class="form-control" readonly />
+                    <span asp-validation-for="nomeArquivoComprovante" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="comprovante" class="control-label"></label>
+                    <strong>
+                        <a href="/Documentos/DAlunos/@Model.nomeArquivoComprovante" target="_blank"><i class="fa fa-eye"></i></a>
+                    </strong>
+                    <input asp-for="comprovante" class="form-control" />
+                    <span asp-validation-for="comprovante" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

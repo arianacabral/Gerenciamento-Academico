@@ -1,0 +1,98 @@
+﻿@model IEnumerable<waGerenciamentoAcademico.Models.Nota>
+
+@{
+    ViewData["Title"] = "Relatorio";
+}
+
+<form asp-action="Relatorio" method="get">
+    <div class="row">
+        <div class="form-group col-md-1">
+            <label for="name">Ano</label>
+            <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Ano" value="@ViewData["currentFilter"]">
+        </div>
+
+        <div class="form-group col-md-1">
+            <label for="name">Semestre</label>
+            <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Semestre" value="@ViewData["currentFilter"]">
+        </div>
+
+        <div class="form-group col-md-5">
+            <label for="name">Aluno</label>
+            <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Aluno" value="@ViewData["currentFilter"]">
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="name">Curso</label>
+            <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Curso" value="@ViewData["currentFilter"]">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="name">Disciplina</label>
+            <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Disciplina" value="@ViewData["currentFilter"]">
+        </div>
+
+    </div> 
+
+    <div class="col-lg-12" style="text-align: right;">
+        <input type="submit" value="Pesquisar" class="btn btn-outline-info btn-md" />
+    </div>
+</form>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.disciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.semestre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.disciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semestre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nota)
+            </td>
+             <td>   
+                
+                @{if (item.nota < 60){item.descricao = "REPROVADO";}else{item.descricao = "APROVADO";}}
+
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

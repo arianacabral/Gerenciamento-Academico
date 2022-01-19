@@ -1,0 +1,79 @@
+﻿@model IEnumerable<waGerenciamentoAcademico.Models.AlunoDisciplina>
+
+@{
+    ViewData["Title"] = "Relatorio";
+}
+<div><a asp-action="Index">Alunos por Disciplinas</a></div>
+<br/>
+
+<form asp-action="Relatorio" method="get">
+
+    <div class="form-actions no-color">
+        <div class="row">
+            <label for="name">Buscar por Curso</label>
+            <div class="form-group col-md-2">
+                <input type="text" class="form-control" id="inputGroup-sizing-sm" name="Curso" value="@ViewData["currentFilter"]">
+            </div>
+            <div class="form-group col-md-4">
+                <input type="submit" value="Pesquisar" class="btn btn-outline-info btn-md" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.disciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nota)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.disciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nota)
+            </td>
+             <td>   
+                
+                @{if (item.nota < 60){item.descricao = "REPROVADO";}else{item.descricao = "APROVADO";}}
+
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

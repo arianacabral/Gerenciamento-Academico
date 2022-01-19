@@ -1,0 +1,46 @@
+﻿@model waGerenciamentoAcademico.Models.Matricula
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar</h1>
+<br/>
+<h4>Matrícula</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="name">Aluno</label>
+                @Html.DropDownListFor(e => e.id_aluno, (SelectList)ViewBag.Alunos, "Selecione o aluno", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="name">Curso</label>
+                @Html.DropDownListFor(e => e.id_curso, (SelectList)ViewBag.Cursos, "Selecione o curso", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="ano" class="control-label"></label>
+                <input asp-for="ano" class="form-control" />
+                <span asp-validation-for="ano" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="semestre" class="control-label"></label>
+                <input asp-for="semestre" class="form-control" />
+                <span asp-validation-for="semestre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<waGerenciamentoAcademico.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imagem)
+            </th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comprovante)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    <img src="/Imagens/IAlunos/@item.nomeArquivo" class="rounded-circle" width="40" height="40" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    <div align = "center">
+                        <strong>
+                            <a href="/Documentos/DAlunos/@item.nomeArquivoComprovante" target="_blank"><i class="fa fa-eye"></i></a>
+                        </strong>
+                    </div>
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+                    @Html.ActionLink("Ver Detalhes", "Details", new { id=item.id }) |
+                    @Html.ActionLink("Deletar", "Delete", new { id=item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

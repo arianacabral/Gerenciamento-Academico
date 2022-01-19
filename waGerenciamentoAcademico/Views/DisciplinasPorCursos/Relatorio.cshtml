@@ -1,0 +1,54 @@
+﻿@model IEnumerable<waGerenciamentoAcademico.Models.DisciplinaCurso>
+
+@{
+    ViewData["Title"] = "Relatorio";
+}
+<div><a asp-action="Index">Disciplinas por Cursos</a></div>
+<br/>
+
+<form asp-action="Relatorio" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Buscar por Curso: <input type="text" name="Curso" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Pesquisar" class="btn btn-outline-info btn-sm" />
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.disciplina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data_desativacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.disciplina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_desativacao)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
