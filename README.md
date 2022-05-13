@@ -39,7 +39,7 @@ Aplicação Web para Gerenciamento Acadêmico
 
 ---
 
-### Aplicação 💻
+### Linguagens e Tecnologias 💻
 
 **Arquitetura MVC** 
 
@@ -49,21 +49,23 @@ Aplicação Web para Gerenciamento Acadêmico
 
 </br>
 
-**Linguagens** 
+**Front-end** 
 
 <div style="display: inline_block">
-  <img align="center" alt="Csharp" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
    <img align="center" alt="CSS" height="30" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="HTML" height="30" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="Js" height="30" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Bootstrap" height="30" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"> 
 </div>
 
 </br>
 
-**Ambiente de Desenvolvimento** 
+**Back-end** 
 
 <div style="display: inline_block">
-  <a href="https://visualstudio.microsoft.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" height="40" width="40" /></a>
+  <img align="center" alt="Csharp" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg">
+  <img align="center" alt="Js" height="30" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="JQuery" height="30" width="40" src="https://avatars.githubusercontent.com/u/70142?s=200&v=4">
 </div>
 
 </br>
@@ -76,11 +78,10 @@ Aplicação Web para Gerenciamento Acadêmico
 
 </br>
 
-**Framework**
+**Ambiente de Desenvolvimento** 
 
 <div style="display: inline_block">
-  <a href="https://getbootstrap.com/"><img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" height="50" width="60" /></a>
-   <a href="https://jquery.com/"><img src="https://avatars.githubusercontent.com/u/70142?s=200&v=4" alt="JQuery" height="50" width="50" /></a>
+  <a href="https://visualstudio.microsoft.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" height="40" width="40" /></a>
 </div>
 
 </br>
