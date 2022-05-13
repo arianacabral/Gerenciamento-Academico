@@ -96,3 +96,14 @@ Aplicação Web para Gerenciamento Acadêmico
 + MySql.Data (8.0.27)
 + System.IO (4.3.0)
 + System.Web.Mvc.Extensions (1.1.0)
+
+### Instalação 🛠
+
+Faça o <a href="https://github.com/arianacabral/Gerenciamento-Academico.git">clone</a> do projeto
+
+```bash
+# Clone o repositório
+$ git https://github.com/arianacabral/Gerenciamento-Academico.git
+```
+
+---
