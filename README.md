@@ -97,6 +97,8 @@ Aplicação Web para Gerenciamento Acadêmico
 + System.IO (4.3.0)
 + System.Web.Mvc.Extensions (1.1.0)
 
+---
+
 ### Instalação 🛠
 
 Faça o <a href="https://github.com/arianacabral/Gerenciamento-Academico.git">clone</a> do projeto
