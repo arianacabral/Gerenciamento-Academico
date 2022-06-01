@@ -3,7 +3,7 @@
 Aplicação Web para Gerenciamento Acadêmico
 > Versão **1.0** 
 
-| [<img src="src/Demo_Cadastrar_Aluno_Atualizado.gif" width="330px;"/><br /><sub>CADASTRAR ALUNO</sub>](src/Demo_Cadastrar_Aluno_Atualizado.gif)<br /> |[<img src="src/Demo_Cadastrar_Curso.gif" width="330px;"/><br /><sub>CADASTRAR CURSO</sub>](src/Demo_Cadastrar_Curso.gif)<br /> | [<img src="src/Demo_Relatorio_Notas.gif" width="330px;"/><br /><sub>RELATÓRIO DE NOTAS</sub>](src/Demo_Relatorio_Notas.gif)<br /> |
+| [<img src="src/Demo_Cadastrar_Aluno_Atualizado.gif" width="330px;"/>](src/Demo_Cadastrar_Aluno_Atualizado.gif) | [<img src="src/Demo_Cadastrar_Curso.gif" width="330px;"/>](src/Demo_Cadastrar_Curso.gif) | [<img src="src/Demo_Relatorio_Notas.gif" width="330px;"/>](src/Demo_Relatorio_Notas.gif) |
 | :---: | :---: | :---: |
 
 ---
