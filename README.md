@@ -101,11 +101,11 @@ Aplicação Web para Gerenciamento Acadêmico
 
 ### Instalação 🛠
 
-Faça o <a href="https://github.com/arianacabral/Gerenciamento-Academico.git">clone</a> do projeto
+Se você é um usuário do Git, faça o <a href="https://github.com/arianacabral/Gerenciamento-Academico.git">clone</a> do projeto
 
 ```bash
 # Clone o repositório
-$ git https://github.com/arianacabral/Gerenciamento-Academico.git
+git https://github.com/arianacabral/Gerenciamento-Academico.git
 ```
 
 ---
